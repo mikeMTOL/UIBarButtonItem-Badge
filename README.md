@@ -13,7 +13,7 @@ UIBarButtonItem+Badge
 <p>Create a BarButtonItem with a badge on top. Easily customizable.
 Your BarButtonItem can be any custom view you wish for. The badge on top can display any number or string of any size or length.</p>
 
-<img alt="ScreenShot BarButtonItem" src="https://github.com/TanguyAladenise/BBBadgeBarButtonItem/blob/master/screenshot.png?raw=true" width="320px"/>
+<img alt="ScreenShot BarButtonItem" src="https://github.com/mmusallam/UIBarButtonItem-Badge/blob/master/screenshot.png?raw=true" width="320px"/>
 
 
 How To Get Started
@@ -44,7 +44,7 @@ button.frame = CGRectMake(0,0,image.size.width, image.size.height);
 [button setBackgroundImage:image forState:UIControlStateNormal];
     
 // Make BarButton Item
-UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] button];
+UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] initWithCustomView:button];
 self.navigationItem.leftBarButtonItem = navLeftButton;
 self.navigationItem.leftBarButtonItem.badgeValue = @"1";
 ```
