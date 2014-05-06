@@ -32,7 +32,7 @@ Don't forget to import the header file wherever you need it :
 Usage
 ------------------
 
-Then, you only need to add a badge is call the setBadgeValue on the UIBarButton item and the trick is done! Make sure you're using 
+Then, to add a badge call setBadgeValue on the UIBarButton item and the trick is done! Make sure you're using 
 UIBarButtonItem with custom view
 
 ``` objective-c
