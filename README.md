@@ -3,9 +3,8 @@ UIBarButtonItem-Badge
 
 ##UIBarButtonItem+Badge
 
-This is categorization of [this github](https://github.com/TanguyAladenise/BBBadgeBarButtonItem).
+This is categorization of [this github Class](https://github.com/TanguyAladenise/BBBadgeBarButtonItem).
 
-I've copied its Readme.md
 
 UIBarButtonItem+Badge
 ==============
