@@ -7,7 +7,7 @@ This is categorization of [this github](https://github.com/TanguyAladenise/BBBad
 
 I've copied its Readme.md
 
-BBBadgeBarButtonItem
+UIBarButtonItem+Badge
 ==============
 
 <p>Create a BarButtonItem with a badge on top. Easily customizable.
@@ -19,49 +19,40 @@ Your BarButtonItem can be any custom view you wish for. The badge on top can dis
 How To Get Started
 ------------------
 
-#### Installation with CocoaPods
+#### Installation 
 
-Use the CocoaPods magic by adding in your podfile the following line :
+It's quite easy, just download and add "UIBarButtonItem+Badge.h" and "UIBarButtonItem+Badge.m" into your xcodeproject.
 
-```ruby
-pod 'BBBadgeBarButtonItem'
-```
-
-#### Manually
-
-It's quite easy, just download and add "BBBadgeBarButtonItem.h" and "BBBadgeBarButtonItem.m" into your xcodeproject.
 Don't forget to import the header file wherever you need it :
 
 ``` objective-c
-#import "BBBadgeBarButtonItem.h"
+#import "UIBarButtonItem+Badge.h"
 ```
 
 Usage
 ------------------
 
-Then, you only need to instantiate your beautiful BBBadgeBarButtonItem and add it to your navigation bar :
+Then, you only need to add a badge is call the setBadgeValue on the UIBarButton item and the trick is done! Make sure you're using 
+UIBarButtonItem with custom view
 
 ``` objective-c
-UIButton *customButton = [[UIButton alloc] init];
-//...
-
-// Create and add our custom BBBadgeBarButtonItem
-BBBadgeBarButtonItem *barButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:customButton];
-// Set a value for the badge
-barButton.badgeValue = @"1";
-
-// Add it as the leftBarButtonItem of the navigation bar
-self.navigationItem.leftBarButtonItem = barButton;
+// Build your regular UIBarButtonItem with Custom View
+UIImage *image = [UIImage imageNamed:@"someImage"];
+UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+button.frame = CGRectMake(0,0,image.size.width, image.size.height);
+[button addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchDown];
+[button setBackgroundImage:image forState:UIControlStateNormal];
+    
+// Make BarButton Item
+UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] button];
+self.navigationItem.leftBarButtonItem = navLeftButton;
+self.navigationItem.leftBarButtonItem.badgeValue = @"1";
 ```
-
-If you want your BarButtonItem to handle touch event and click, use a UIButton as customView.
-The icon or text displayed by the BarButtonItem is your custom view.
-
 
 Useful properties
 ---------------
 
-Take a look at BBBadgeBarButtonItem.h to see how easily and quickly you can customize the badge.
+Take a look at UIBarButtonItem+Badge.h to see how you can customize the badge.
 Remember that each time you change one of these value, the badge will directly be refresh to handle your styling preferences.
 
 ``` objective-c
@@ -92,12 +83,10 @@ Remember that each time you change one of these value, the badge will directly b
 
 You can also choose to turn off the little bounce animation triggered when changing the badge value or decide if 0 should be display or not.
 
-What else ?
+Requirements
 ---------------
 
 The class is compatible with iOS >= 6.0.
-
-There is a little demo project to help you if you need ;)
 
 
 More
