@@ -96,7 +96,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
         [animation setFromValue:[NSNumber numberWithFloat:1.5]];
         [animation setToValue:[NSNumber numberWithFloat:1]];
         [animation setDuration:0.2];
-        [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4 :1.3 :1 :1]];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4f :1.3f :1.f :1.f]];
         [self.badge.layer addAnimation:animation forKey:@"bounceAnimation"];
     }
     
@@ -208,7 +208,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
 }
 -(void) setBadgePadding:(CGFloat)badgePadding
 {
-    NSNumber *number = [NSNumber numberWithFloat:badgePadding];
+    NSNumber *number = [NSNumber numberWithDouble:badgePadding];
     objc_setAssociatedObject(self, &badgePaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.badge) {
         [self updateBadgeFrame];
@@ -222,7 +222,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
 }
 -(void) setBadgeMinSize:(CGFloat)badgeMinSize
 {
-    NSNumber *number = [NSNumber numberWithFloat:badgeMinSize];
+    NSNumber *number = [NSNumber numberWithDouble:badgeMinSize];
     objc_setAssociatedObject(self, &badgeMinSizeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.badge) {
         [self updateBadgeFrame];
@@ -236,7 +236,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
 }
 -(void) setBadgeOriginX:(CGFloat)badgeOriginX
 {
-    NSNumber *number = [NSNumber numberWithFloat:badgeOriginX];
+    NSNumber *number = [NSNumber numberWithDouble:badgeOriginX];
     objc_setAssociatedObject(self, &badgeOriginXKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.badge) {
         [self updateBadgeFrame];
@@ -249,7 +249,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
 }
 -(void) setBadgeOriginY:(CGFloat)badgeOriginY
 {
-    NSNumber *number = [NSNumber numberWithFloat:badgeOriginY];
+    NSNumber *number = [NSNumber numberWithDouble:badgeOriginY];
     objc_setAssociatedObject(self, &badgeOriginYKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.badge) {
         [self updateBadgeFrame];
