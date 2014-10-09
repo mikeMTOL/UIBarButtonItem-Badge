@@ -3,7 +3,7 @@ UIBarButtonItem-Badge
 
 ##UIBarButtonItem+Badge
 
-This is categorization of [this github Class](https://github.com/TanguyAladenise/BBBadgeBarButtonItem).
+This is categorization of [this github Class](https://github.com/TanguyAladenise/BBBadgeBarButtonItem). Its expanded for UIButton use too.
 
 
 UIBarButtonItem+Badge
