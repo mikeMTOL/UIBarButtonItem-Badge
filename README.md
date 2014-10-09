@@ -8,11 +8,19 @@ This is categorization of [this github Class](https://github.com/TanguyAladenise
 
 UIBarButtonItem+Badge
 ==============
-
 <p>Create a BarButtonItem with a badge on top. Easily customizable.
 Your BarButtonItem can be any custom view you wish for. The badge on top can display any number or string of any size or length.</p>
 
-<img alt="ScreenShot BarButtonItem" src="https://github.com/mmusallam/UIBarButtonItem-Badge/blob/master/screenshot.png?raw=true" width="320px"/>
+<img alt="ScreenShot BarButtonItem" src="https://github.com/mikemtol/UIBarButtonItem-Badge/blob/master/screenshot.png?raw=true" width="320px"/>
+
+
+UIButton+Badge
+==============
+
+<p>Create a UIButton with a badge on top. Easily customizable.
+Your UIButton can be any button you wish to use. The badge on top can display any number or string of any size or length.</p>
+
+<img alt="ScreenShot BarButtonItem" src="https://github.com/mikemtol/UIBarButtonItem-Badge/blob/master/screenshot2.png?raw=true" width="320px"/>
 
 
 How To Get Started
