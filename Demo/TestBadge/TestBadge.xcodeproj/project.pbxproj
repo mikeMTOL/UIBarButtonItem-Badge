@@ -23,6 +23,7 @@
 		4C4E51C61919851C0004970E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4E51C41919851C0004970E /* InfoPlist.strings */; };
 		4C4E51C81919851C0004970E /* TestBadgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E51C71919851C0004970E /* TestBadgeTests.m */; };
 		4C4E51D3191986830004970E /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E51D2191986830004970E /* UIBarButtonItem+Badge.m */; };
+		4C57197C19E6D11400A79127 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C57197B19E6D11400A79127 /* UIButton+Badge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		4C4E51C71919851C0004970E /* TestBadgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBadgeTests.m; sourceTree = "<group>"; };
 		4C4E51D1191986830004970E /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Badge.h"; path = "../../../UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		4C4E51D2191986830004970E /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Badge.m"; path = "../../../UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		4C57197A19E6D11400A79127 /* UIButton+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Badge.h"; path = "../../../UIButton+Badge.h"; sourceTree = "<group>"; };
+		4C57197B19E6D11400A79127 /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Badge.m"; path = "../../../UIButton+Badge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 		4C4E519F1919851C0004970E /* TestBadge */ = {
 			isa = PBXGroup;
 			children = (
+				4C57197A19E6D11400A79127 /* UIButton+Badge.h */,
+				4C57197B19E6D11400A79127 /* UIButton+Badge.m */,
 				4C4E51D1191986830004970E /* UIBarButtonItem+Badge.h */,
 				4C4E51D2191986830004970E /* UIBarButtonItem+Badge.m */,
 				4C4E51A81919851C0004970E /* AppDelegate.h */,
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C4E51AA1919851C0004970E /* AppDelegate.m in Sources */,
+				4C57197C19E6D11400A79127 /* UIButton+Badge.m in Sources */,
 				4C4E51B01919851C0004970E /* MasterViewController.m in Sources */,
 				4C4E51A61919851C0004970E /* main.m in Sources */,
 				4C4E51B31919851C0004970E /* DetailViewController.m in Sources */,
@@ -468,6 +474,7 @@
 				4C4E51CD1919851C0004970E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C4E51CE1919851C0004970E /* Build configuration list for PBXNativeTarget "TestBadgeTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +483,7 @@
 				4C4E51D01919851C0004970E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

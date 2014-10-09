@@ -10,29 +10,29 @@
 	<string>TestBadge</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DB5E6CCC-1EF7-4EE7-9B3A-C3ABBC53FC11</key>
+		<key>BDFA195447E23E7077125556D5DE624222871CE5</key>
 		<string>https://github.com/mmusallam/UIBarButtonItem-Badge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Demo/TestBadge/TestBadge.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DB5E6CCC-1EF7-4EE7-9B3A-C3ABBC53FC11</key>
+		<key>BDFA195447E23E7077125556D5DE624222871CE5</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mmusallam/UIBarButtonItem-Badge.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DB5E6CCC-1EF7-4EE7-9B3A-C3ABBC53FC11</string>
+	<string>BDFA195447E23E7077125556D5DE624222871CE5</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DB5E6CCC-1EF7-4EE7-9B3A-C3ABBC53FC11</string>
+			<string>BDFA195447E23E7077125556D5DE624222871CE5</string>
 			<key>IDESourceControlWCCName</key>
 			<string>UIBarButtonItem-Badge</string>
 		</dict>

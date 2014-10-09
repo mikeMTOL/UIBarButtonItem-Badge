@@ -7,9 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "UIButton+Badge.h"
 
 @interface DetailViewController ()
 - (void)configureView;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 @end
 
 @implementation DetailViewController
@@ -40,6 +42,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    self.button.badgeValue = @"1";
+    self.button.badgeBGColor = [UIColor orangeColor];
 }
 
 - (void)didReceiveMemoryWarning
