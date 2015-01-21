@@ -29,18 +29,29 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
 
 - (void)badgeInit
 {
+    UIView *superview = nil;
+    CGFloat defaultOriginX = 0;
+    if (self.customView) {
+        superview = self.customView;
+        defaultOriginX = superview.frame.size.width - self.badge.frame.size.width/2;
+        // Avoids badge to be clipped when animating its scale
+        superview.clipsToBounds = NO;
+    } else if ([self respondsToSelector:@selector(view)] && [(id)self view]) {
+        superview = [(id)self view];
+        defaultOriginX = superview.frame.size.width - self.badge.frame.size.width;
+    }
+    [superview addSubview:self.badge];
+    
     // Default design initialization
     self.badgeBGColor   = [UIColor redColor];
     self.badgeTextColor = [UIColor whiteColor];
     self.badgeFont      = [UIFont systemFontOfSize:12.0];
     self.badgePadding   = 6;
     self.badgeMinSize   = 8;
-    self.badgeOriginX   = self.customView.frame.size.width - self.badge.frame.size.width/2;
+    self.badgeOriginX   = defaultOriginX;
     self.badgeOriginY   = -4;
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
-    // Avoids badge to be clipped when animating its scale
-    self.customView.clipsToBounds = NO;
 }
 
 #pragma mark - Utility methods
@@ -158,7 +169,13 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
         self.badge.font                 = self.badgeFont;
         self.badge.textAlignment        = NSTextAlignmentCenter;
         [self badgeInit];
-        [self.customView addSubview:self.badge];
+        UIView *superview = nil;
+        if (self.customView) {
+            superview = self.customView;
+        } else if ([self respondsToSelector:@selector(view)] && [(id)self view]) {
+            superview = [(id)self view];
+        }
+        [superview addSubview:self.badge];
         [self updateBadgeValueAnimated:NO];
     } else {
         [self updateBadgeValueAnimated:YES];
