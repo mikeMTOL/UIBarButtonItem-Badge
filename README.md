@@ -56,6 +56,18 @@ self.navigationItem.leftBarButtonItem = navLeftButton;
 self.navigationItem.leftBarButtonItem.badgeValue = @"1";
 ```
 
+A new merge now enables adding badge without a custom view
+``` objective-c
+UIImage *image = [UIImage imageNamed:@"someImage"];
+UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] initWithImage:image
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(buttonPress:)];
+self.navigationItem.leftBarButtonItem = navLeftButton;
+self.navigationItem.leftBarButtonItem.badgeValue = @"1";
+```
+
+
 Useful properties
 ---------------
 
