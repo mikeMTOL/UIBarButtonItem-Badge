@@ -45,6 +45,16 @@
     self.navigationItem.leftBarButtonItem.badgeValue = @"1";
     self.navigationItem.leftBarButtonItem.badgeBGColor = self.navigationController.navigationBar.tintColor;
     
+    // new method of adding badges
+    UIImage *image2 = [UIImage imageNamed:@"someImage"];
+    UIBarButtonItem *navRightButton = [[UIBarButtonItem alloc] initWithImage:image2
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(buttonPress:)];
+    self.navigationItem.rightBarButtonItem = navRightButton;
+    self.navigationItem.rightBarButtonItem.badgeValue = @"2";
+    self.navigationItem.rightBarButtonItem.badgeBGColor = [UIColor orangeColor];
+    
 }
 
 - (void)didReceiveMemoryWarning
