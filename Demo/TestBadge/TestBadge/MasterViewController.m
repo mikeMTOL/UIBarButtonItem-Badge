@@ -42,9 +42,22 @@
     // Make BarButton Item
     UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = navLeftButton;
-    self.navigationItem.leftBarButtonItem.badgeValue = @"1";
+    self.navigationItem.leftBarButtonItem.badgeValue = @"0";
     self.navigationItem.leftBarButtonItem.badgeBGColor = self.navigationController.navigationBar.tintColor;
     
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(incrementBadge:)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+}
+
+-(void)incrementBadge:(id)sender
+{
+    NSInteger val = [self.navigationItem.leftBarButtonItem.badgeValue integerValue];
+    val++;
+    self.navigationItem.leftBarButtonItem.badgeValue = [NSString stringWithFormat:@"%ld",val%5];
 }
 
 - (void)didReceiveMemoryWarning
