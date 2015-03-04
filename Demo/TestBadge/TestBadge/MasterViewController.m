@@ -32,18 +32,29 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    // Build your regular UIBarButtonItem with Custom View
-    UIImage *image = [UIImage imageNamed:@"someImage"];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0,0,image.size.width, image.size.height);
-    [button addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchDown];
-    [button setBackgroundImage:image forState:UIControlStateNormal];
+//    // Build your regular UIBarButtonItem with Custom View
+//    UIImage *image = [UIImage imageNamed:@"someImage"];
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button.frame = CGRectMake(0,0,image.size.width, image.size.height);
+//    [button addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchDown];
+//    [button setBackgroundImage:image forState:UIControlStateNormal];
+//    
+//    // Make BarButton Item
+//    UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+//    self.navigationItem.leftBarButtonItem = navLeftButton;
+//    self.navigationItem.leftBarButtonItem.badgeValue = @"1";
+//    self.navigationItem.leftBarButtonItem.badgeBGColor = self.navigationController.navigationBar.tintColor;
     
-    // Make BarButton Item
-    UIBarButtonItem *navLeftButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = navLeftButton;
-    self.navigationItem.leftBarButtonItem.badgeValue = @"0";
-    self.navigationItem.leftBarButtonItem.badgeBGColor = self.navigationController.navigationBar.tintColor;
+    // new method of adding badges
+    UIImage *image2 = [UIImage imageNamed:@"someImage"];
+    UIBarButtonItem *navRightButton = [[UIBarButtonItem alloc] initWithImage:image2
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(buttonPress:)];
+    self.navigationItem.leftBarButtonItem = navRightButton;
+    self.navigationItem.leftBarButtonItem.badgeValue = @"2";
+    self.navigationItem.leftBarButtonItem.badgeBGColor = [UIColor orangeColor];
+
     
     [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
