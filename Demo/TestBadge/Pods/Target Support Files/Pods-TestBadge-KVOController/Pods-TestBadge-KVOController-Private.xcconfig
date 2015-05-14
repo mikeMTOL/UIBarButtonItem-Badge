@@ -1,0 +1,6 @@
+#include "Pods-TestBadge-KVOController.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/KVOController" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/KVOController"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES
