@@ -123,10 +123,13 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
     self.badge.text = self.badgeValue;
     
     // Animate the size modification if needed
-    NSTimeInterval duration = animated ? 0.2 : 0;
-    [UIView animateWithDuration:duration animations:^{
+    if (animated && self.shouldAnimateBadge) {
+        [UIView animateWithDuration:0.2 animations:^{
+            [self updateBadgeFrame];
+        }];
+    } else {
         [self updateBadgeFrame];
-    }];
+    }
 }
 
 - (UILabel *)duplicateLabel:(UILabel *)labelToCopy
