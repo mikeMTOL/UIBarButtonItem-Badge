@@ -8,6 +8,8 @@
 #import <objc/runtime.h>
 #import "UIBarButtonItem+Badge.h"
 
+#import <KVOController/FBKVOController.h>
+
 NSString const *UIBarButtonItem_badgeKey = @"UIBarButtonItem_badgeKey";
 
 NSString const *UIBarButtonItem_badgeBGColorKey = @"UIBarButtonItem_badgeBGColorKey";
@@ -21,6 +23,12 @@ NSString const *UIBarButtonItem_shouldHideBadgeAtZeroKey = @"UIBarButtonItem_sho
 NSString const *UIBarButtonItem_shouldAnimateBadgeKey = @"UIBarButtonItem_shouldAnimateBadgeKey";
 NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey";
 
+@interface UIBarButtonItem ()
+
+@property (strong, nonatomic, readwrite) UIView *view;
+
+@end
+
 @implementation UIBarButtonItem (Badge)
 
 @dynamic badgeValue, badgeBGColor, badgeTextColor, badgeFont;
@@ -29,6 +37,19 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
 
 - (void)badgeInit
 {
+    [self badgeAddToView];
+    
+    [self.KVOController unobserveAll];
+    [self.KVOController observe:self keyPath:@"view" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([self view]) {
+                [self badgeAddToView];
+            }
+        });
+    }];
+}
+
+- (void)badgeAddToView {
     UIView *superview = nil;
     CGFloat defaultOriginX = 0;
     if (self.customView) {
@@ -41,6 +62,7 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
         defaultOriginX = superview.frame.size.width - self.badge.frame.size.width;
     }
     [superview addSubview:self.badge];
+    
     
     // Default design initialization
     self.badgeBGColor   = [UIColor redColor];
@@ -70,7 +92,7 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
         self.badge.hidden = NO;
         [self updateBadgeValueAnimated:YES];
     }
-
+    
 }
 
 - (CGSize) badgeExpectedSize
@@ -88,7 +110,7 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
 
 - (void)updateBadgeFrame
 {
-
+    
     CGSize expectedLabelSize = [self badgeExpectedSize];
     
     // Make sure that for small value, the badge will be big enough
@@ -300,6 +322,5 @@ NSString const *UIBarButtonItem_badgeValueKey = @"UIBarButtonItem_badgeValueKey"
         [self refreshBadge];
     }
 }
-
 
 @end

@@ -24,6 +24,7 @@
 		4C4E51C81919851C0004970E /* TestBadgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E51C71919851C0004970E /* TestBadgeTests.m */; };
 		4C4E51D3191986830004970E /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4E51D2191986830004970E /* UIBarButtonItem+Badge.m */; };
 		4C57197C19E6D11400A79127 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C57197B19E6D11400A79127 /* UIButton+Badge.m */; };
+		6B960393F395E8A6EFA1D400 /* libPods-TestBadge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26269EF8DA15A23AEA4F3325 /* libPods-TestBadge.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26269EF8DA15A23AEA4F3325 /* libPods-TestBadge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestBadge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4E51961919851C0004970E /* TestBadge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBadge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4E51991919851C0004970E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C4E519B1919851C0004970E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +64,8 @@
 		4C4E51D2191986830004970E /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Badge.m"; path = "../../../UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
 		4C57197A19E6D11400A79127 /* UIButton+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Badge.h"; path = "../../../UIButton+Badge.h"; sourceTree = "<group>"; };
 		4C57197B19E6D11400A79127 /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Badge.m"; path = "../../../UIButton+Badge.m"; sourceTree = "<group>"; };
+		913FC99C271A19661895D900 /* Pods-TestBadge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestBadge.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestBadge/Pods-TestBadge.release.xcconfig"; sourceTree = "<group>"; };
+		D9044CB7D0C0992A99516E97 /* Pods-TestBadge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestBadge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestBadge/Pods-TestBadge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				4C4E519C1919851C0004970E /* CoreGraphics.framework in Frameworks */,
 				4C4E519E1919851C0004970E /* UIKit.framework in Frameworks */,
 				4C4E519A1919851C0004970E /* Foundation.framework in Frameworks */,
+				6B960393F395E8A6EFA1D400 /* libPods-TestBadge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DF56A05DE69179728B8A297 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9044CB7D0C0992A99516E97 /* Pods-TestBadge.debug.xcconfig */,
+				913FC99C271A19661895D900 /* Pods-TestBadge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4C4E518D1919851C0004970E = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +109,7 @@
 				4C4E51C11919851C0004970E /* TestBadgeTests */,
 				4C4E51981919851C0004970E /* Frameworks */,
 				4C4E51971919851C0004970E /* Products */,
+				3DF56A05DE69179728B8A297 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +129,7 @@
 				4C4E519B1919851C0004970E /* CoreGraphics.framework */,
 				4C4E519D1919851C0004970E /* UIKit.framework */,
 				4C4E51BB1919851C0004970E /* XCTest.framework */,
+				26269EF8DA15A23AEA4F3325 /* libPods-TestBadge.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C4E51CB1919851C0004970E /* Build configuration list for PBXNativeTarget "TestBadge" */;
 			buildPhases = (
+				E6BAA26BA98D4697ED84D65C /* Check Pods Manifest.lock */,
 				4C4E51921919851C0004970E /* Sources */,
 				4C4E51931919851C0004970E /* Frameworks */,
 				4C4E51941919851C0004970E /* Resources */,
+				A5185ED87747D35276DFE90E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +276,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A5185ED87747D35276DFE90E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestBadge/Pods-TestBadge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6BAA26BA98D4697ED84D65C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C4E51921919851C0004970E /* Sources */ = {
@@ -391,6 +442,7 @@
 		};
 		4C4E51CC1919851C0004970E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9044CB7D0C0992A99516E97 /* Pods-TestBadge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -404,6 +456,7 @@
 		};
 		4C4E51CD1919851C0004970E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 913FC99C271A19661895D900 /* Pods-TestBadge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
