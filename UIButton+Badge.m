@@ -104,7 +104,7 @@ NSString const *UIButton_badgeValueKey = @"UIButton_badgeValueKey";
     self.badge.text = self.badgeValue;
     
     // Animate the size modification if needed
-    NSTimeInterval duration = animated ? 0.2 : 0;
+    NSTimeInterval duration = (animated && self.shouldAnimateBadge) ? 0.2 : 0;
     [UIView animateWithDuration:duration animations:^{
         [self updateBadgeFrame];
     }];
